@@ -18,14 +18,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <ul class="nav navbar-nav">
       <?php 
-        $query = "SELECT * FROM categories";
-        $data = mysqli_query($connection, $query);
-        while($row = mysqli_fetch_assoc($data)){
-          $title = $row["cat_title"];
-          echo "<li> <a href=\"#\"> {$title} </a> </li>";
-        
-        }
-    ?>
+        $data = read();
+        foreach($data as $row)
+          echo "<li> <a href=\"#\"> {$row['cat_title']} </a> </li>";    
+      ?>
+    <li> <a href="admin">Admin</a></li>
       </ul>
         <!-- 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

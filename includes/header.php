@@ -1,3 +1,5 @@
+<?php include "C:\\xampp\\htdocs\\cms\\admin\\includes\\crud.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
