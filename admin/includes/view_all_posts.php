@@ -10,7 +10,7 @@
                 <th>Tags</th>
                 <th>Comments</th>
                 <th>Date</th>
-                <th>Options</th>
+                <th colspan=2>Options</th>
               </tr>
             </thead>
             
@@ -34,10 +34,11 @@
                   echo "<td> $title </td>";
                   echo "<td> $category </td>";
                   echo "<td> $status </td>";
-                  echo "<td><img class=\"img-responsive\" src=\"./images/$images\" width=300 height=100> </td>";
+                  echo "<td><img class=\"img-responsive\" src=\"../images/$images\" width=300 height=100> </td>";
                   echo "<td> $tags </td>";
                   echo "<td> $comments </td>";
                   echo "<td> $date </td>";
+                  echo "<td> <a href=\"posts.php?source=edit_post&edit={$id}\">Edit </a></td>";
                   echo "<td><a href=\"posts.php?source=view_all_posts&delete={$id}\">Delete</a></td>";
                   echo "</tr>";
                 }

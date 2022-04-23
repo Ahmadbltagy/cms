@@ -5,9 +5,12 @@
     $cat_id     = $_POST["post_category"];
     $status     = $_POST["post_status"];
     $img        = $_FILES["image"]["name"];
+    $img_tmp    = $_FILES["image"]["tmp_name"];
     $tags       = $_POST["post_tags"];
     $content    = $_POST["post_content"];
     
+    move_uploaded_file($img_tmp, "../images/$img");
+
     addPost($title, $author, $status , $img , $tags, $content );
   }
 ?>
