@@ -18,7 +18,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <ul class="nav navbar-nav">
       <?php 
-        $data = read();
+        $data = read("categories");
         foreach($data as $row)
           echo "<li> <a href=\"#\"> {$row['cat_title']} </a> </li>";    
       ?>

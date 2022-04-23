@@ -1,9 +1,9 @@
 <?php include "includes/header.php"; ?>
 <?php include "includes/crud.php" ?>
 
-    <div id="wrapper">
-        <!-- Navigation -->
-        <?php include "includes/navigation.php" ?>
+<div id="wrapper">
+  <!-- Navigation -->
+    <?php include "includes/navigation.php" ?>
 
         <div id="page-wrapper">
 
@@ -58,11 +58,12 @@
                               <tr>
                                 <th>Id</th>
                                 <th>Category title</th>
+                                <th colspan=2 style="text-align: center;">Options</th>
                               </tr>
                             </thead>
 
                               <?php 
-                                $data = read();
+                                $data = read("categories");
                                 foreach($data as $row){
                                   $cat_id    =  $row["cat_id"];
                                   $cat_title =  $row["cat_title"];

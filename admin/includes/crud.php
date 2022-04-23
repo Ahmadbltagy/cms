@@ -7,10 +7,10 @@
     
   }
   
-  function read(){
+  function read($tableName){
     global $connection;
-    $arr = array()  ;
-    $query = "SELECT * FROM categories";
+    $arr = array();
+    $query = "SELECT * FROM {$tableName}";
     $read_q = mysqli_query($connection, $query);
     
     while ($row = mysqli_fetch_assoc($read_q))
@@ -37,4 +37,19 @@
     while($row = mysqli_fetch_assoc($read_q))
       return $cat_title = $row['cat_title'];
     
+  }
+
+
+  //Posts Crud
+  function addPost($title, $author, $status , $img , $tags, $content){
+   global $connection;
+   $query = "INSERT INTO posts(post_title, post_author, post_status, post_img, post_tags, post_content)";
+   $query .= " VALUES ('$title', '$author', '$status', '$img' , '$tags', '$content')";
+   mysqli_query($connection, $query); 
+  }
+
+  function deletePost($post_id){
+    global $connection;
+    $query = "DELETE FROM posts WHERE post_id='{$post_id}'";
+    mysqli_query($connection, $query);
   }
